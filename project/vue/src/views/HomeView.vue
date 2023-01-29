@@ -78,14 +78,40 @@
         </el-header>
 
         <el-main>
-          <el-table :data="tableData">
+          <div style ="padding: 10px 0">
+            <el-input style="width:200px" suffix-icon="el-icon-search" placeholder="Enter name" class="ml-5"></el-input>
+            <el-input style="width:200px" suffix-icon="el-icon-message" placeholder="Enter email" class="ml-5"></el-input>
+            <el-input style="width:200px" suffix-icon="el-icon-position" placeholder="Enter address" class="ml-5"></el-input><el-button class="ml-5" type="primary">Search</el-button>
+          </div>
+          <div>
+            <el-button style="margin: 10px" type="primary" >Add new  <i class="el-icon-circle-plus-outline"></i></el-button>
+            <el-button style="margin: 10px" type="primary" >Batch remove  <i class="el-icon-circle-remove-outline"></i></el-button>
+            <el-button style="margin: 10px" type="primary" >Import  <i class="el-icon-bottom"></i></el-button>
+            <el-button style="margin: 10px" type="primary" >Export  <i class="el-icon-top"></i></el-button>
+          </div>
+          <el-table :data="tableData" stripe border>
             <el-table-column prop="date" label="日期" width="140">
             </el-table-column>
             <el-table-column prop="name" label="姓名" width="120">
             </el-table-column>
             <el-table-column prop="address" label="地址">
+            </el-table-column >
+            <el-table-column prop="manipulation" label="操作">
+              <el-button type="success">Edit<i class="el-icon-edit"></i></el-button>
+              <el-button type="danger">Delete<i class="el-icon-remove-outline"></i></el-button>
             </el-table-column>
           </el-table>
+          <div style="padding: 10px 0">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page="currentPage4"
+              :page-sizes="[5, 10, 15, 20]"
+              :page-size="10"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="400">
+            </el-pagination>
+          </div>
         </el-main>
       </el-container>
     </el-container>
