@@ -78,6 +78,12 @@
         </el-header>
 
         <el-main>
+          <div style="margin-bottom: 30px">
+            <el-breadcrumb separator="/">
+              <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+              <el-breadcrumb-item>User Management</el-breadcrumb-item>
+            </el-breadcrumb>
+          </div>
           <div style ="padding: 10px 0">
             <el-input style="width:200px" suffix-icon="el-icon-search" placeholder="Enter name" class="ml-5"></el-input>
             <el-input style="width:200px" suffix-icon="el-icon-message" placeholder="Enter email" class="ml-5"></el-input>
