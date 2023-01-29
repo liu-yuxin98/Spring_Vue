@@ -557,6 +557,66 @@ global.css
 }
 ```
 
+# update4 maven setting
+
+1. download maven and set it based on https://www.runoob.com/maven/maven-pom.html
+2. check version
+
+```sh
+mvn -v
+```
+
+# update5 spring framework
+
+spring book freamwork build
+
+1） intellij create new project 2) select Spring Initializer
+![title](otherSources/img/ProjectInitial.png)
+3 developer tools-> lombok
+4 web -> Spring Web= Spring MVC
+5 SQL -> MySQL Driver , MyBatis Framework
+MySQL root pwd:lyx1998225 username:root pwd:lyx1998225
+6 Spring Boot version 2.7.8 choose lower
+![title](otherSources/img/MySQLinfo.png)
+
+7 add alibaba cloud pom in pom.xml
+
+```
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+```
+
+8 update application.properities
+
+```
+server.port=9090
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/world?serverTimezone=GMT%2b8
+spring.datasource.username=root
+spring.datasource.password=lyx1998225
+```
+
+9 move vue into springboot folder
+10 start both front end and backend
+edit configuration and add npm like below
+![title](otherSources/img/npm.png)
+then start backend by click run
+Then we can access them from localhost.
+front end 8080
+backend 9090
+![title](otherSources/img/effectPicture1.png)
+
 # next update start from here
 
 # next update end at here
